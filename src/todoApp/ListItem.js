@@ -5,7 +5,7 @@ class ListItem extends Component {
         return (
             <>
                 <ol>
-                    <li>ListItem</li>
+                    {this.props.todoItems.map((todoItem)=> <li>{todoItem}</li>)}
                 </ol>
             </>
         );

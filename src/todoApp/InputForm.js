@@ -6,12 +6,11 @@ class InputForm extends Component{
 
         return (
         <>
-            <form>
+            <form onSubmit = {this.props.handleNewItemOnSubmit}>
                 <label>New Task </label>
-                <input type ="text" placeholder="Add your next task here" onChange= {this.props.handleChange}/>
+                <input type ="text" placeholder="Add your next task here" value={this.props.currentItem} onChange= {this.props.handleChange}/>
                 <br/>
-                <h2>Prop: {this.props.currentItem}</h2>
-                <button>Add Item</button>
+                <button onClick={this.props.handleNewItemOnSubmit}>Add Item number: {this.props.todoItems.length +1}</button>
             </form>
         </>
         )
