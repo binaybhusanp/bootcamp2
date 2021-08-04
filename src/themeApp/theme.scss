@@ -1,0 +1,19 @@
+// demonstration of BEM methodology for writing css classnames using SCSS
+.themeapp {
+  // Block
+
+  &__button {
+    // Element
+
+    &--whitetheme {
+      //Modifiers
+      background-color: white;
+      color: black;
+    }
+
+    &--blacktheme {
+      background-color: black;
+      color: white;
+    }
+  }
+}
