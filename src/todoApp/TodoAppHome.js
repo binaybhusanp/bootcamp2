@@ -22,14 +22,14 @@ class TodoAppHome extends Component {
 
     render() {
         return (
-        <>
+        <div className="content__child-app">
             <h1>ToDo List App</h1>
             {/* Input form for the todo list App */}
             <InputForm currentItem={this.state.currentItem} handleChange={this.handleChange} handleNewItemOnSubmit={this.handleNewItemOnSubmit} todoItems={this.state.todoItems}/>
 
             {/* List view of the todo list items */}
             <ListItem todoItems = {this.state.todoItems}/>
-        </>
+        </div>
         )
     }
 }
