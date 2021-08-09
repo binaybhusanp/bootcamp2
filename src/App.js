@@ -1,21 +1,37 @@
-import './App.css';
-import Theme from './themeApp/Theme';
-import Timer from './timerApp/Timer';
-import TodoAppHome from './todoApp/TodoAppHome';
+import "./App.scss";
+import Theme from "./themeApp/Theme";
+import Timer from "./timerApp/Timer";
+import TodoAppHome from "./todoApp/TodoAppHome";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import SideNav from "./common/SideNav";
+import Home from "./common/Home.js";
 
 function App() {
   return (
-    <div className="App">
-      
-      {/* Theme App */}
-      <Theme/>
+    <Router>
+      <div className="app-container">
+        <SideNav />
 
-      {/* Timer App */}
-      <Timer/>
+        <Route exact path="/">
+          <Home />
+        </Route>
 
-      {/* ToDo List App */}
-      <TodoAppHome/>
-    </div>
+        <Route path="/theme">
+          {/* Theme App */}
+          <Theme />
+        </Route>
+
+        <Route path="/timer">
+          {/* Timer App */}
+          <Timer />
+        </Route>
+
+        <Route path="/todo">
+          {/* ToDo List App */}
+          <TodoAppHome />
+        </Route>
+      </div>
+    </Router>
   );
 }
 
