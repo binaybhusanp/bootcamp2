@@ -10,13 +10,13 @@ class Theme extends Component {
     handleSwitchTheme = () => {
         if (this.state.theme === 'white'){
             this.setState({theme : "black"});
-            document.querySelectorAll('body')[0].classList.remove("themeapp__button--whitetheme");
-            document.querySelectorAll('body')[0].classList.add("themeapp__button--blacktheme");
+            document.documentElement.classList.remove("themeapp__button--whitetheme");
+            document.documentElement.classList.add("themeapp__button--blacktheme");
         }
         else {
             this.setState({theme: "white"});
-            document.querySelectorAll('body')[0].classList.remove("themeapp__button--blacktheme");
-            document.querySelectorAll('body')[0].classList.add("themeapp__button--whitetheme");
+            document.documentElement.classList.remove("themeapp__button--blacktheme");
+            document.documentElement.classList.add("themeapp__button--whitetheme");
         }
 
     }
