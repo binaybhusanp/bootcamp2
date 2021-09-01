@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import getCovidData from "./utils/GetCovidData";
+import "./styles/dataTable.scss";
 
 const CovidDashboard = () => {
   const [countriesData, setCountriesData] = useState([]);
@@ -11,20 +12,20 @@ const CovidDashboard = () => {
   });
 
   return (
-    <div>
-      <h1>Covid Dashboard</h1>
-      <table>
-        <thead>
+    <div className="covid-dashboard">
+      <h1 className="covid-dashboard__title">Covid Dashboard</h1>
+      <table className="covid-dashboard__table">
+        <thead className="covid-dashboard__table-header">
           <tr>
-            <td>Country</td>
-            <td>Daily Confirmed</td>
-            <td>Total Confirmed</td>
-            <td>Active Cases</td>
-            <td>Total Deaths</td>
-            <td>Last Updated</td>
+            <th>Country</th>
+            <th>Daily Confirmed</th>
+            <th>Total Confirmed</th>
+            <th>Active Cases</th>
+            <th>Total Deaths</th>
+            <th>Last Updated</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="covid-dashboard__table-body">
           {countriesData
             ? countriesData.map((countryData) => (
                 <tr>
